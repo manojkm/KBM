@@ -32,16 +32,16 @@
 
 .email-main-content {
   background-color: $white;
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 
   .main-content-wrapper {
-    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     flex: 1;
     min-height: 0; // Allows flex child to shrink below content size
+    overflow: hidden;
   }
 }
 

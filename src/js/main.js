@@ -21,5 +21,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Bootstrap tooltips
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+  // Toggle star icon in email viewer header
+  document.addEventListener('click', function(e) {
+    const starButton = e.target.closest('.email-action-star')
+    if (starButton) {
+      e.preventDefault()
+      starButton.classList.toggle('starred')
+      
+      // Update tooltip text
+      const tooltipInstance = bootstrap.Tooltip.getInstance(starButton)
+      if (tooltipInstance) {
+        const isStarred = starButton.classList.contains('starred')
+        tooltipInstance.setContent({ '.tooltip-inner': isStarred ? 'Unstar' : 'Star' })
+      }
+    }
+  })
 })
 

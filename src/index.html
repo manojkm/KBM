@@ -239,7 +239,7 @@
                 </span>
 
                 <!-- Search Input -->
-                <input type="text" class="form-control border-0 py-2" placeholder="Search (min 3 characters)..."
+                <input type="text" class="form-control border-0 py-2 ps-0" placeholder="Search (min 3 characters)..."
                   aria-label="Search (min 3 characters)...">
 
                 <!-- Filter Dropdown (Right) -->
@@ -370,7 +370,7 @@
                               <span class="badge rounded-pill type-mode">
                                 <i class="bi bi-link-45deg me-1"></i>VrboAPI
                               </span>
-                              <span class="badge rounded-pill type-role-guest">Guest</span>
+                              <span class="badge rounded-pill type-role-default">Default</span>
                             </div>
                             <div class="email-date text-muted">06:10 AM</div>
                           </div>
@@ -421,7 +421,7 @@
                               <span class="badge rounded-pill type-mode">
                                 <i class="bi bi-link-45deg me-1"></i>VrboAPI
                               </span>
-                              <span class="badge rounded-pill type-role-guest">Guest</span>
+                              <span class="badge rounded-pill type-role-default">Default</span>
                             </div>
                             <div class="email-date text-muted">09:45 AM</div>
                           </div>
@@ -551,9 +551,163 @@
         </aside>
 
         <!-- Main Content: Email Viewer -->
-        <section class="col-lg-8 col-xl-9 email-main-content">
-          <div class="main-content-wrapper h-100">
-            <!-- Main content will go here -->
+        <section class="col-lg-8 col-xl-9 email-main-content px-3">
+          <div class="main-content-wrapper h-100 d-flex flex-column">
+            <!-- Email Viewer Tabs -->
+            <ul class="nav nav-tabs email-viewer-tabs border-bottom" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="email-tab" data-bs-toggle="tab" data-bs-target="#email-pane"
+                  type="button" role="tab" aria-controls="email-pane" aria-selected="true">EMAIL</button>
+              </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content flex-grow-1" id="emailViewerTabContent">
+              <!-- Email Tab Pane -->
+              <div class="tab-pane fade show active h-100" id="email-pane" role="tabpanel" aria-labelledby="email-tab">
+                <div class="d-flex flex-column h-100">
+                  <!-- Email Header -->
+                  <div class="email-viewer-header border-bottom py-3">
+                    <div class="d-flex justify-content-between align-items-start gap-3">
+                      <!-- Left Side: Email Info -->
+                      <div class="flex-grow-1 min-w-0">
+                        <!-- Inbox Icon + Subject -->
+                        <div class="d-flex gap-2 mb-2">
+                          <div class="email-icon-circle me-2"><i class="bi bi-inbox text-primary"></i></div>
+                          <div>
+                            <h5 class="mb-2 text-primary fw-bold email-subject">VRBO_API RES_GENERAL34 2025-12-26
+                              2025-12-30 Friedley, Tara</h5>
+                            <!-- From -->
+                            <div class="email-from text-primary small">
+                              <span class="fw-medium text-end text-muted">from:</span> peterbrighton@gmail.com
+                            </div>
+                            <!-- To -->
+                            <div class="email-to text-primary small">
+                              <span class="fw-medium text-end text-muted">to:</span> reservations@kbmresorts.com
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Right Side: Actions -->
+                      <div class="d-flex flex-column align-items-end gap-2 flex-shrink-0">
+                        <!-- Date -->
+                        <div class="text-muted text-end">
+                          <div class="x-small">Dec 31, 2025, 10:36:00 PM</div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex gap-1">
+                          <!-- Star Button -->
+                          <button type="button"
+                            class="btn btn-xs btn-outline-light border border-dark border-opacity-25 text-muted email-action-star"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="small-tooltip"
+                            title="Star">
+                            <i class="bi bi-star"></i>
+                          </button>
+
+                          <!-- Preview Button -->
+                          <button type="button"
+                            class="btn btn-xs btn-outline-light border border-dark border-opacity-25 text-muted"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="small-tooltip"
+                            title="Preview">
+                            <i class="bi bi-box-arrow-up-right"></i>
+                          </button>
+
+                          <!-- Delete Button -->
+                          <button type="button"
+                            class="btn btn-xs btn-outline-light border border-dark border-opacity-25 text-muted"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="small-tooltip"
+                            title="Delete">
+                            <i class="bi bi-trash"></i>
+                          </button>
+
+                          <!-- More Options Dropdown -->
+                          <div class="dropdown">
+                            <button class="btn btn-xs btn-outline-light border border-dark border-opacity-25 text-muted"
+                              type="button" id="emailMoreOptions" data-bs-toggle="dropdown" aria-expanded="false"
+                              aria-label="More options">
+                              <i class="bi bi-three-dots"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="emailMoreOptions">
+                              <li><a class="dropdown-item" href="#">Forward</a></li>
+                              <li><a class="dropdown-item" href="#">Mark as unread</a></li>
+                              <li><a class="dropdown-item" href="#">Archive</a></li>
+                              <li>
+                                <hr class="dropdown-divider">
+                              </li>
+                              <li><a class="dropdown-item" href="#">Move to folder</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Email Action Toolbar -->
+                    <div class="email-action-toolbar d-flex justify-content-between align-items-center gap-3 mt-1">
+                      <!-- Left Side: Action Buttons -->
+                      <div class="d-flex align-items-center gap-2 flex-wrap">
+                        <button type="button" class="btn btn-primary d-flex align-items-center gap-1">
+                          <i class="bi bi-reply"></i>
+                          <span>Reply</span>
+                        </button>
+
+                        <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-1">
+                          <i class="bi bi-reply-all"></i>
+                          <span>Reply All</span>
+                        </button>
+
+                        <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-1">
+                          <i class="bi bi-forward"></i>
+                          <span>Forward</span>
+                        </button>
+
+                        <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-1">
+                          <i class="bi bi-list-task"></i>
+                          <span>Add Task</span>
+                        </button>
+                      </div>
+
+                      <!-- Right Side: Search & Filter -->
+                      <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                        <!-- Search Box -->
+                        <div class="input-group" style="max-width: 200px;">
+                          <span class="input-group-text bg-white border border-end-0">
+                            <i class="bi bi-search text-muted"></i>
+                          </span>
+                          <input type="text" class="form-control border border-start-0" placeholder="Search for Tags"
+                            aria-label="Search for Tags">
+                        </div>
+
+                        <!-- Filter Dropdown -->
+                        <div class="dropdown">
+                          <button class="btn btn-light border dropdown-toggle px-2" type="button"
+                            id="emailViewerFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-funnel me-1"></i>
+                            Filter
+                          </button>
+                          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="emailViewerFilterDropdown">
+                            <li><a class="dropdown-item" href="#">All Tags</a></li>
+                            <li><a class="dropdown-item" href="#">Important</a></li>
+                            <li><a class="dropdown-item" href="#">Follow-up</a></li>
+                            <li>
+                              <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Custom Filter</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Email Body (scrollable) -->
+                  <div class="email-viewer-body flex-grow-1 overflow-auto p-4">
+                    <!-- Email content will go here -->
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </section>
       </div>
