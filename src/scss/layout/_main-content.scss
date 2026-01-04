@@ -19,6 +19,13 @@
     .row {
       flex: 1;
       min-height: 0;
+
+      // Ensure columns have proper height constraints
+      > [class*="col-"] {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+      }
     }
   }
 }

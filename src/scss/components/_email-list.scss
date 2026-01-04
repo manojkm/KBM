@@ -141,9 +141,14 @@
         color: $gray-700;
       }
 
-      &.type-role {
+      &.type-role-guest {
         background-color: $cyan-200;
         color: $cyan-800;
+      }
+
+      &.type-role-default {
+        background-color: $yellow-200;
+        color: $yellow-800;
       }
 
       i {
