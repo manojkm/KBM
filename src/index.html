@@ -264,7 +264,161 @@
 
             <!-- Email List Content (scrollable) -->
             <div class="sidebar-list flex-grow-1 overflow-auto">
-              <!-- Email list items will go here -->
+              <div class="accordion email-accordion" id="emailListAccordion">
+                <!-- Today -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button email-accordion-header py-1" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseToday" aria-expanded="true" aria-controls="collapseToday">
+                      <div class="d-flex justify-content-between align-items-center w-100 me-3 small text-muted ">
+                        <span>Today</span>
+                        <span class="badge bg-white rounded-1 text-muted border border-muted-subtle p-1">3</span>
+                      </div>
+                    </button>
+                  </h2>
+                  <div id="collapseToday" class="accordion-collapse collapse show">
+                    <div class="accordion-body p-0">
+                      <ul class="list-group list-group-flush email-list">
+                        <li class="list-group-item email-list-item active">
+                          <div class="email-header">
+                            <div class="email-meta text-primary fw-bold">
+                              <span class="email-reference">VRBO_API RES_GENERAL443</span>
+                              <span class="email-dates">2026-02-03 2026-02-10</span>
+                              <span class="email-guest-name">Carter, Alexandra</span>
+                            </div>
+                            <button type="button" class="btn btn-link p-0 email-star" data-bs-toggle="tooltip"
+                              data-bs-placement="left" data-bs-custom-class="small-tooltip" title="Bookmark">
+                              <i class="bi bi-star"></i>
+                            </button>
+                          </div>
+
+                          <div class="email-addresses mt-2 mb-2">
+                            <div class="text-primary x-small"><span class="text-muted">from:</span>denrique@gmail.com
+                            </div>
+                            <div class="text-primary x-small"><span
+                                class="text-muted">to:</span>reservations@kbmresorts.com
+                            </div>
+                          </div>
+
+                          <div class="email-badges d-flex align-items-center justify-content-between gap-2 mt-2">
+                            <div class="d-flex gap-1">
+                              <span class="badge rounded-pill type-booking">Reservations</span>
+                              <span class="badge rounded-pill type-mode">
+                                <i class="bi bi-chat-dots me-1"></i>SMS
+                              </span>
+                              <span class="badge rounded-pill type-role">Guest</span>
+                            </div>
+                            <div class="email-date text-muted">06:10 AM</div>
+                          </div>
+                        </li>
+                        <li class="list-group-item email-list-item">
+                          <div class="email-header">
+                            <div class="email-meta text-primary fw-bold">
+                              <span class="email-reference">VRBO_API RES_GENERAL443</span>
+                              <span class="email-dates">2026-02-03 2026-02-10</span>
+                              <span class="email-guest-name">Carter, Alexandra</span>
+                            </div>
+                            <button type="button" class="btn btn-link p-0 email-star" data-bs-toggle="tooltip"
+                              data-bs-placement="left" data-bs-custom-class="small-tooltip" title="Bookmark">
+                              <i class="bi bi-star"></i>
+                            </button>
+                          </div>
+
+                          <div class="email-addresses mt-2 mb-2">
+                            <div class="text-primary x-small"><span class="text-muted">from:</span>denrique@gmail.com
+                            </div>
+                            <div class="text-primary x-small"><span
+                                class="text-muted">to:</span>reservations@kbmresorts.com
+                            </div>
+                          </div>
+
+                          <div class="email-badges d-flex align-items-center justify-content-between gap-2 mt-2">
+                            <div class="d-flex gap-1">
+                              <span class="badge rounded-pill type-booking">Reservations</span>
+                              <span class="badge rounded-pill type-mode">
+                                <i class="bi bi-chat-dots me-1"></i>SMS
+                              </span>
+                              <span class="badge rounded-pill type-role">Guest</span>
+                            </div>
+                            <div class="email-date text-muted">06:10 AM</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Yesterday -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button email-accordion-header py-1" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseYesterday" aria-expanded="true" aria-controls="collapseYesterday">
+                      <div class="d-flex justify-content-between align-items-center w-100 me-3 small text-muted">
+                        <span>Yesterday</span>
+                        <span class="badge bg-white rounded-1 text-muted border border-muted-subtle p-1">5</span>
+                      </div>
+                    </button>
+                  </h2>
+                  <div id="collapseYesterday" class="accordion-collapse collapse show">
+                    <div class="accordion-body p-0">
+                      <ul class="list-group list-group-flush email-list">
+                        <li class="list-group-item email-list-item">
+                          <div class="email-header">
+                            <div class="email-meta text-primary fw-bold">
+                              <span class="email-reference">VRBO_API RES_GENERAL443</span>
+                              <span class="email-dates">2026-02-03 2026-02-10</span>
+                              <span class="email-guest-name">Carter, Alexandra</span>
+                            </div>
+                            <button type="button" class="btn btn-link p-0 email-star" data-bs-toggle="tooltip"
+                              data-bs-placement="left" data-bs-custom-class="small-tooltip" title="Bookmark">
+                              <i class="bi bi-star"></i>
+                            </button>
+                          </div>
+
+                          <div class="email-addresses mt-2 mb-2">
+                            <div class="text-primary x-small"><span class="text-muted">from:</span>denrique@gmail.com
+                            </div>
+                            <div class="text-primary x-small"><span
+                                class="text-muted">to:</span>reservations@kbmresorts.com
+                            </div>
+                          </div>
+
+                          <div class="email-badges d-flex align-items-center justify-content-between gap-2 mt-2">
+                            <div class="d-flex gap-1">
+                              <span class="badge rounded-pill type-booking">Reservations</span>
+                              <span class="badge rounded-pill type-mode">
+                                <i class="bi bi-chat-dots me-1"></i>SMS
+                              </span>
+                              <span class="badge rounded-pill type-role">Guest</span>
+                            </div>
+                            <div class="email-date text-muted">06:10 AM</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Last 7 days -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button email-accordion-header py-1" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseLast7Days" aria-expanded="true" aria-controls="collapseLast7Days">
+                      <div class="d-flex justify-content-between align-items-center w-100 me-3 small text-muted">
+                        <span>Last 7 days</span>
+                        <span class="badge bg-white rounded-1 text-muted border border-muted-subtle p-1">13</span>
+                      </div>
+                    </button>
+                  </h2>
+                  <div id="collapseLast7Days" class="accordion-collapse collapse show">
+                    <div class="accordion-body p-0">
+                      <ul class="list-group list-group-flush email-list">
+                        <!-- Email items for Last 7 days -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </aside>

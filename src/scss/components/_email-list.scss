@@ -2,3 +2,158 @@
 // Email List Component
 // ============================================================================
 // Styles for the email list items in the sidebar
+
+.email-accordion {
+  --bs-accordion-border-width: 0;
+  --bs-accordion-btn-padding-x: 1rem;
+  --bs-accordion-btn-padding-y: 0.75rem;
+  --bs-accordion-body-padding-x: 0;
+  --bs-accordion-body-padding-y: 0;
+  --bs-accordion-active-color: inherit;
+  --bs-accordion-btn-focus-border-color: none;
+  --bs-accordion-btn-focus-box-shadow: none;
+  --bs-accordion-btn-icon-width: 0.75rem;
+
+  .accordion-item {
+    border: none;
+    border-bottom: 1px solid var(--bs-border-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .email-accordion-header {
+    background-color: $gray-100;
+    // box-shadow: none;
+    // font-weight: 500;
+    // font-size: 0.875rem;
+    // // padding: 0.75rem 1rem;
+
+    &:not(.collapsed) {
+      background-color: $gray-100;
+      box-shadow: none;
+    }
+
+    &::after {
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.125rem 0.5rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.email-list {
+  border: none;
+  background-color: transparent;
+
+  .email-list-item {
+    border-bottom: 1px solid var(--bs-border-color);
+    border-left: none;
+    border-right: none;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover:not(.active) {
+      background-color: var(--bs-light);
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.active {
+      background-color: #fff9e6; // Light yellow background
+      border-left: 3px solid var(--bs-warning);
+      padding-left: calc(1rem - 3px); // Adjust padding to compensate for border
+    }
+  }
+
+  .email-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .email-meta {
+    flex: 1;
+    min-width: 0; // Allows text truncation
+  }
+
+  .email-star {
+    color: var(--bs-warning);
+    flex-shrink: 0;
+    padding: 0.25rem;
+
+    i {
+      font-size: 1rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+      color: var(--bs-warning);
+      transform: scale(1.1);
+    }
+
+    &.starred {
+      i {
+        &::before {
+          content: "\f586"; // bi-star-fill
+        }
+      }
+    }
+  }
+
+  .email-addresses {
+    .text-muted {
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    span {
+      width: 40px;
+      display: inline-block;
+      text-align: right;
+      margin-right: 10px;
+    }
+  }
+
+  .email-badges {
+    .badge {
+      font-weight: 400;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+
+      &.type-booking {
+        background-color: $blue-100;
+        color: $blue-700;
+      }
+
+      &.type-mode {
+        background-color: $gray-300;
+        color: $gray-700;
+      }
+
+      &.type-role {
+        background-color: $cyan-200;
+        color: $cyan-800;
+      }
+
+      i {
+        font-size: 0.75rem;
+      }
+    }
+
+    .email-date {
+      font-size: 0.70rem;
+      opacity: 0.7;
+    }
+  }
+}
