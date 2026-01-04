@@ -1,0 +1,14 @@
+// ============================================================================
+// Custom Utilities
+// ============================================================================
+// Add custom utility classes using Bootstrap's Utility API
+// Reference: https://getbootstrap.com/docs/5.3/utilities/api/
+
+$utilities: map-merge($utilities,
+    ( // Extra small text utility
+      "x-small": (property: font-size,
+        class: x-small,
+        values: (null: 0.75rem,
+        ),
+      ),
+    ));

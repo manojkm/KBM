@@ -25,11 +25,8 @@
 // Step 4: Customize Sass maps (optional but recommended for advanced customization)
 // If you need to merge custom values into Bootstrap's maps (like theme-colors),
 // do it here AFTER importing variables but BEFORE importing maps.
-// Example:
-// $theme-colors: map-merge($theme-colors, (
-//   "kbm-primary": #your-color,
-//   "kbm-secondary": #another-color
-// ));
+// Import custom maps file that contains all map customizations
+@import "custom-maps";
 
 // Step 5: Import Bootstrap's maps (REQUIRED for Bootstrap 5.2+)
 // Maps are separated from variables in Bootstrap 5.2+
@@ -39,51 +36,73 @@
 // Mixins are needed for component generation
 @import "bootstrap/scss/mixins";
 
-// Step 7: Import the rest of Bootstrap
-// Since we've already imported functions, variables, maps, and mixins above,
-// Sass will use those (with our overrides) and import all components.
-// Sass only imports each file once, so this is safe.
-@import "bootstrap/scss/bootstrap";
+// Step 7: Import Bootstrap utilities (but NOT utilities/api yet)
+// We need to import utilities before the API so we can add custom utilities
+@import "bootstrap/scss/utilities";
 
-// Alternative: If you want to import components selectively to reduce bundle size,
-// comment out the line above and uncomment individual component imports:
-// @import "bootstrap/scss/root";
-// @import "bootstrap/scss/reboot";
-// @import "bootstrap/scss/type";
-// @import "bootstrap/scss/images";
-// @import "bootstrap/scss/containers";
-// @import "bootstrap/scss/grid";
-// @import "bootstrap/scss/tables";
-// @import "bootstrap/scss/forms";
-// @import "bootstrap/scss/buttons";
-// @import "bootstrap/scss/dropdown";
-// @import "bootstrap/scss/nav";
-// @import "bootstrap/scss/navbar";
-// @import "bootstrap/scss/card";
-// @import "bootstrap/scss/modal";
-// @import "bootstrap/scss/tooltip";
-// ... (add other components as needed)
-// @import "bootstrap/scss/utilities/api";
+// Step 7.5: Add custom utilities using Bootstrap's Utility API
+// Reference: https://getbootstrap.com/docs/5.3/utilities/api/
+@import "custom-utilities";
+
+// Step 7.6: Import utilities API (generates utility classes)
+@import "bootstrap/scss/utilities/api";
+
+// Step 8: Import the rest of Bootstrap (excluding utilities which we already imported)
+// Since we've already imported functions, variables, maps, mixins, and utilities,
+// we need to import components manually
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "components/custom-buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/accordion";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/placeholders";
 
 // ============================================================================
 // Custom KBM Resorts Styles
 // ============================================================================
 
-// Step 8: Import custom base files (mixins, helpers)
+// Step 9: Import custom base files (mixins, helpers)
 // Import these early so they're available to other files
 @import "base/mixins";
 @import "base/helpers";
 
-// Step 9: Import layout styles
+// Step 10: Import layout styles
 @import "layout/header";
 @import "layout/sidebar";
 @import "layout/main-content";
 
-// Step 10: Import component styles
+// Step 11: Import component styles
 @import "components/inbox-toolbar";
+@import "components/sidebar-toolbar";
 @import "components/email-list";
 @import "components/email-viewer";
 @import "components/email-compose";
 
-// Step 11: Import global custom styles (last, so it can override everything)
+// Step 12: Import global custom styles (last, so it can override everything)
 @import "custom";

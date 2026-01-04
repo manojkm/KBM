@@ -1,0 +1,14 @@
+// ============================================================================
+// Custom Button Components
+// ============================================================================
+// Custom button size classes that extend Bootstrap's button component
+// These must be imported AFTER bootstrap/scss/buttons
+
+// Extra small button size
+// Note: .btn-xs is a component class (not utility) because it sets multiple
+// properties (padding, font-size, border-radius). Component classes are more
+// appropriate for multi-property modifications.
+.btn-xs {
+  @include button-size(0.30rem, 0.30rem, 0.85rem, $btn-border-radius-sm);
+  line-height: 1;
+}

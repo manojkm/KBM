@@ -1,0 +1,14 @@
+// ============================================================================
+// Custom Bootstrap Maps
+// ============================================================================
+// Customizations to Bootstrap's Sass maps (like $spacers, $theme-colors, etc.)
+// This file is imported AFTER Bootstrap's variables but BEFORE Bootstrap's maps
+// so that the customizations are available when maps are processed.
+
+// Add custom spacing values (e.g., py-2-5, py-3-5)
+// Note: Use string keys with dashes since CSS class names cannot contain dots
+$spacers: map-merge($spacers, (
+  "2-5": $spacer * 0.625,  // 0.625rem - halfway between 2 (0.5rem) and 3 (1rem)
+  "3-5": $spacer * 1.25,   // 1.25rem - halfway between 3 (1rem) and 4 (1.5rem)
+));
+
