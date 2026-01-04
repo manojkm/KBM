@@ -14,4 +14,11 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
+  // Allow page scrolling on mobile
+  @include media-breakpoint-down(lg) {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
 }

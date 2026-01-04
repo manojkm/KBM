@@ -21,7 +21,7 @@
       min-height: 0;
 
       // Ensure columns have proper height constraints
-      > [class*="col-"] {
+      >[class*="col-"] {
         display: flex;
         flex-direction: column;
         min-height: 0;
@@ -35,23 +35,54 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   .main-content-wrapper {
-    display: flex;
-    flex-direction: column;
     flex: 1;
     min-height: 0; // Allows flex child to shrink below content size
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 }
 
 // Responsive adjustments
 @include media-breakpoint-down(lg) {
+  .main-wrapper {
+    // Allow page scrolling on mobile when content is stacked
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .email-sidebar {
     max-height: 50vh;
+    height: auto;
+    min-height: 50vh;
   }
 
   .email-main-content {
     min-height: 50vh;
+    height: auto;
+    
+    .main-content-wrapper {
+      // On mobile, allow natural height flow
+      overflow: visible;
+    }
+  }
+
+  // On mobile, make email viewer body naturally scrollable within the page scroll
+  #emailViewerTabContent {
+    overflow: visible;
+    
+    .tab-pane {
+      overflow: visible;
+    }
+  }
+
+  .email-viewer-body {
+    // On mobile, allow natural height - page will scroll
+    overflow: visible;
+    min-height: auto;
   }
 }

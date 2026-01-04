@@ -37,5 +37,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   })
+
+  // Handle Message Recipients collapse icon rotation
+  const recipientsCollapse = document.getElementById('messageRecipientsCollapse')
+  if (recipientsCollapse) {
+    const collapseButton = document.querySelector('[data-bs-target="#messageRecipientsCollapse"]')
+    if (collapseButton) {
+      recipientsCollapse.addEventListener('show.bs.collapse', function() {
+        collapseButton.querySelector('i').classList.remove('bi-chevron-up')
+        collapseButton.querySelector('i').classList.add('bi-chevron-down')
+      })
+      recipientsCollapse.addEventListener('hide.bs.collapse', function() {
+        collapseButton.querySelector('i').classList.remove('bi-chevron-down')
+        collapseButton.querySelector('i').classList.add('bi-chevron-up')
+      })
+    }
+  }
+
+  // Handle "Select All" checkbox for recipients
+  const selectAllRecipients = document.getElementById('selectAllRecipients')
+  if (selectAllRecipients) {
+    selectAllRecipients.addEventListener('change', function() {
+      const checkboxes = document.querySelectorAll('#messageRecipientsCollapse tbody input[type="checkbox"]')
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = selectAllRecipients.checked
+      })
+    })
+  }
 })
 

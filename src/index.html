@@ -564,11 +564,12 @@
             <!-- Tab Content -->
             <div class="tab-content flex-grow-1" id="emailViewerTabContent">
               <!-- Email Tab Pane -->
-              <div class="tab-pane fade show active h-100" id="email-pane" role="tabpanel" aria-labelledby="email-tab">
-                <div class="d-flex flex-column h-100">
+              <div class="tab-pane fade show active" id="email-pane" role="tabpanel" aria-labelledby="email-tab">
+                <div class="d-flex flex-column h-100" style="min-height: 0;">
                   <!-- Email Header -->
                   <div class="email-viewer-header border-bottom py-3">
-                    <div class="d-flex justify-content-between align-items-start gap-3">
+                    <div
+                      class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-1 gap-md-3 mb-3 mb-md-0">
                       <!-- Left Side: Email Info -->
                       <div class="flex-grow-1 min-w-0">
                         <!-- Inbox Icon + Subject -->
@@ -590,9 +591,10 @@
                       </div>
 
                       <!-- Right Side: Actions -->
-                      <div class="d-flex flex-column align-items-end gap-2 flex-shrink-0">
+                      <div
+                        class="d-none d-md-flex flex-column align-items-md-end align-items-center gap-2 flex-shrink-0 email-viewer-actions">
                         <!-- Date -->
-                        <div class="text-muted text-end">
+                        <div class="text-muted text-md-end text-start">
                           <div class="x-small">Dec 31, 2025, 10:36:00 PM</div>
                         </div>
 
@@ -644,34 +646,123 @@
                     </div>
 
                     <!-- Email Action Toolbar -->
-                    <div class="email-action-toolbar d-flex justify-content-between align-items-center gap-3 mt-1">
+                    <div
+                      class="email-action-toolbar d-flex flex-column flex-md-row justify-content-between align-items-md-center align-items-start gap-3 mt-1">
                       <!-- Left Side: Action Buttons -->
-                      <div class="d-flex align-items-center gap-2 flex-wrap">
-                        <button type="button" class="btn btn-primary d-flex align-items-center gap-1">
+                      <div
+                        class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 flex-wrap w-100 w-md-auto">
+                        <!-- Primary Action: Reply (always visible) -->
+                        <button type="button"
+                          class="btn btn-primary email-action-primary d-flex align-items-center gap-1">
                           <i class="bi bi-reply"></i>
-                          <span>Reply</span>
+                          <span class="d-none d-sm-inline">Reply</span>
                         </button>
 
-                        <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-1">
-                          <i class="bi bi-reply-all"></i>
-                          <span>Reply All</span>
-                        </button>
+                        <!-- Secondary Actions: Desktop (always visible) -->
+                        <div class="d-none d-md-flex align-items-center gap-2">
+                          <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-1">
+                            <i class="bi bi-reply-all"></i>
+                            <span>Reply All</span>
+                          </button>
 
-                        <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-1">
-                          <i class="bi bi-forward"></i>
-                          <span>Forward</span>
-                        </button>
+                          <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-1">
+                            <i class="bi bi-forward"></i>
+                            <span>Forward</span>
+                          </button>
 
-                        <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-1">
-                          <i class="bi bi-list-task"></i>
-                          <span>Add Task</span>
-                        </button>
+                          <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-1">
+                            <i class="bi bi-list-task"></i>
+                            <span>Add Task</span>
+                          </button>
+                        </div>
+
+                        <!-- More Actions Dropdown: Mobile & Desktop (secondary actions on mobile) -->
+                        <div class="dropdown d-md-none">
+                          <button class="btn btn-outline-primary email-action-more d-flex align-items-center gap-1"
+                            type="button" id="emailActionMoreDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots-vertical d-md-none"></i>
+                            <span class="d-md-inline d-none">More</span>
+                            <i class="bi bi-chevron-down d-none d-md-inline ms-1"></i>
+                          </button>
+                          <ul class="dropdown-menu dropdown-menu-start dropdown-menu-md-end"
+                            aria-labelledby="emailActionMoreDropdown">
+                            <li class="d-md-none">
+                              <a class="dropdown-item" href="#">
+                                <i class="bi bi-reply-all me-2"></i>Reply All
+                              </a>
+                            </li>
+                            <li class="d-md-none">
+                              <a class="dropdown-item" href="#">
+                                <i class="bi bi-forward me-2"></i>Forward
+                              </a>
+                            </li>
+                            <li class="d-md-none">
+                              <a class="dropdown-item" href="#">
+                                <i class="bi bi-list-task me-2"></i>Add Task
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div
+                          class="d-flex d-md-none ms-auto flex-column align-items-end gap-2 flex-shrink-0 email-viewer-actions w-auto">
+                          <!-- Date -->
+                          <div class="text-muted text-md-end text-start">
+                            <div class="x-small">Dec 31, 2025, 10:36:00 PM</div>
+                          </div>
+
+                          <!-- Action Buttons -->
+                          <div class="d-flex gap-1">
+                            <!-- Star Button -->
+                            <button type="button"
+                              class="btn btn-xs btn-outline-light border border-dark border-opacity-25 text-muted email-action-star"
+                              data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="small-tooltip"
+                              title="Star">
+                              <i class="bi bi-star"></i>
+                            </button>
+
+                            <!-- Preview Button -->
+                            <button type="button"
+                              class="btn btn-xs btn-outline-light border border-dark border-opacity-25 text-muted"
+                              data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="small-tooltip"
+                              title="Preview">
+                              <i class="bi bi-box-arrow-up-right"></i>
+                            </button>
+
+                            <!-- Delete Button -->
+                            <button type="button"
+                              class="btn btn-xs btn-outline-light border border-dark border-opacity-25 text-muted"
+                              data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="small-tooltip"
+                              title="Delete">
+                              <i class="bi bi-trash"></i>
+                            </button>
+
+                            <!-- More Options Dropdown -->
+                            <div class="dropdown">
+                              <button
+                                class="btn btn-xs btn-outline-light border border-dark border-opacity-25 text-muted"
+                                type="button" id="emailMoreOptions" data-bs-toggle="dropdown" aria-expanded="false"
+                                aria-label="More options">
+                                <i class="bi bi-three-dots"></i>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="emailMoreOptions">
+                                <li><a class="dropdown-item" href="#">Forward</a></li>
+                                <li><a class="dropdown-item" href="#">Mark as unread</a></li>
+                                <li><a class="dropdown-item" href="#">Archive</a></li>
+                                <li>
+                                  <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Move to folder</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <!-- Right Side: Search & Filter -->
-                      <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                      <div class="d-flex align-items-center gap-2 flex-shrink-0 email-action-search-filter">
                         <!-- Search Box -->
-                        <div class="input-group" style="max-width: 200px;">
+                        <div class="input-group flex-grow-1 flex-md-grow-0" style="max-width: 200px;">
                           <span class="input-group-text bg-white border border-end-0">
                             <i class="bi bi-search text-muted"></i>
                           </span>
@@ -684,7 +775,7 @@
                           <button class="btn btn-light border dropdown-toggle px-2" type="button"
                             id="emailViewerFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-funnel me-1"></i>
-                            Filter
+                            <span class="d-none d-sm-inline">Filter</span>
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="emailViewerFilterDropdown">
                             <li><a class="dropdown-item" href="#">All Tags</a></li>
@@ -697,12 +788,231 @@
                           </ul>
                         </div>
                       </div>
+
+
                     </div>
                   </div>
 
                   <!-- Email Body (scrollable) -->
-                  <div class="email-viewer-body flex-grow-1 overflow-auto p-4">
-                    <!-- Email content will go here -->
+                  <div class="email-viewer-body p-1 p-md-4">
+                    <!-- Email Content -->
+                    <div class="email-content">
+                      <p>Hi,</p>
+
+                      <p>Good morning I just had a quick question. We didn't check in a minute before 4 PM but we had
+                        cleaning people there at 10 AM this morning when check out is at 11. Is that normal? </p>
+                      <hr class="my-4">
+
+                      <div class="email-attachments mt-3">
+                        <h6 class="fw-bold mb-2">
+                          <i class="bi bi-paperclip me-1"></i>Attachments
+                        </h6>
+                        <ul class="list-unstyled">
+                          <li class="mb-2">
+                            <a href="#" class="text-primary text-decoration-none">
+                              <i class="bi bi-file-earmark-pdf me-1"></i>reservation-confirmation.pdf
+                            </a>
+                            <span class="text-muted small ms-2">(245 KB)</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- Conversation History -->
+                      <div class="conversation-history mt-5 pt-4 border-top">
+                        <h5 class="fw-bold mb-3 text-primary">Conversation History (Email, SMS)</h5>
+
+                        <div class="conversation-messages">
+                          <!-- Message from Guest (Left) -->
+                          <div class="conversation-message guest-message mb-3">
+                            <div class="d-flex gap-2 align-items-end">
+                              <!-- Avatar -->
+                              <div class="conversation-avatar flex-shrink-0">
+                                <i class="bi bi-person-circle text-primary fs-3 lh-1"></i>
+                              </div>
+
+                              <!-- Message Content -->
+                              <div class="flex-grow-1">
+                                <div class="message-header mb-1">
+                                  <span class="fw-medium">Peter - Guest</span>
+                                  <span class="text-muted small ms-2">10:12 AM</span>
+                                  <span class="badge bg-secondary-subtle text-secondary rounded-pill small ms-2"><i
+                                      class="bi bi-envelope-fill me-1"></i> Email</span>
+                                </div>
+                                <div class="message-bubble guest-bubble p-3 rounded-5">
+                                  Hi, I wanted to confirm my reservation dates and check if early check-in is available
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Message from Agent (Right) -->
+                          <div class="conversation-message agent-message mb-3">
+                            <div class="d-flex gap-2 flex-row-reverse align-items-end">
+                              <!-- Avatar -->
+                              <div class="conversation-avatar flex-shrink-0">
+                                <i class="bi bi-person-circle text-primary fs-3 lh-1"></i>
+                              </div>
+
+                              <!-- Message Content -->
+                              <div class="flex-grow-1 text-end">
+                                <div class="message-header mb-1">
+                                  <span class="badge bg-secondary-subtle text-secondary rounded-pill small me-2"><i
+                                      class="bi bi-envelope-fill me-1"></i>Email</span>
+                                  <span class="text-muted small me-2">10:13 AM</span>
+                                  <span class="fw-medium">Sam - Agent</span>
+                                </div>
+                                <div class="message-bubble agent-bubble p-3 ms-auto rounded-5">
+                                  Hi Peter — yes, your reservation is confirmed for March 18-20. Early check-in is
+                                  available from 11:00 AM. Please let me know if that works.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Message from Guest (Left) -->
+                          <div class="conversation-message guest-message mb-3">
+                            <div class="d-flex gap-2 align-items-end">
+                              <!-- Avatar -->
+                              <div class="conversation-avatar flex-shrink-0">
+                                <i class="bi bi-person-circle text-primary fs-3 lh-1"></i>
+                              </div>
+
+                              <!-- Message Content -->
+                              <div class="flex-grow-1">
+                                <div class="message-header mb-1">
+                                  <span class="fw-medium">Peter - Guest</span>
+                                  <span class="text-muted small ms-2">10:20 AM</span>
+                                  <span class="badge bg-secondary-subtle text-secondary rounded-pill small ms-2"><i
+                                      class="bi bi-envelope-fill me-1"></i>Email</span>
+                                </div>
+                                <div class="message-bubble guest-bubble p-3 rounded-5">
+                                  YES — early check in please.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Message from Agent (Right) -->
+                          <div class="conversation-message agent-message mb-3">
+                            <div class="d-flex gap-2 flex-row-reverse align-items-end">
+                              <!-- Avatar -->
+                              <div class="conversation-avatar flex-shrink-0">
+                                <i class="bi bi-person-circle text-primary fs-3 lh-1"></i>
+                              </div>
+
+                              <!-- Message Content -->
+                              <div class="flex-grow-1 text-end">
+                                <div class="message-header mb-1">
+                                  <span class="badge bg-secondary-subtle text-secondary rounded-pill small me-2"><i
+                                      class="bi bi-chat-dots me-1"></i>SMS</span>
+                                  <span class="text-muted small me-2">10:33 AM</span>
+                                  <span class="fw-medium">Sam - Agent</span>
+                                </div>
+                                <div class="message-bubble agent-bubble p-3 rounded-5 ms-auto">
+                                  Great — early check-in has been added to your reservation. We look forward to
+                                  welcoming you!
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Message Recipients -->
+                      <div class="message-recipients mt-5 pt-4 border-top">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                          <div>
+                            <h5 class="fw-bold mb-1 text-primary">Message Recipients</h5>
+                            <p class="text-muted small mb-0">Select who should receive this message.</p>
+                          </div>
+                          <button class="btn btn-link p-0 text-muted" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#messageRecipientsCollapse" aria-expanded="true"
+                            aria-controls="messageRecipientsCollapse">
+                            <i class="bi bi-chevron-down"></i>
+                          </button>
+                        </div>
+
+                        <div class="collapse show" id="messageRecipientsCollapse">
+                          <div class="table-responsive">
+                            <table class="table table-sm table-hover">
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="sortable">
+                                    <div class="d-flex align-items-center gap-1">
+                                      <input class="form-check-input me-2" type="checkbox" id="selectAllRecipients">
+                                      <span>Send Mail</span>
+                                      <i class="bi bi-arrow-down-up text-muted"></i>
+                                    </div>
+                                  </th>
+                                  <th scope="col" class="sortable">
+                                    Recipient Id <i class="bi bi-arrow-down-up text-muted"></i>
+                                  </th>
+                                  <th scope="col" class="sortable">
+                                    First Name <i class="bi bi-arrow-down-up text-muted"></i>
+                                  </th>
+                                  <th scope="col" class="sortable">
+                                    Last Name <i class="bi bi-arrow-down-up text-muted"></i>
+                                  </th>
+                                  <th scope="col" class="sortable">
+                                    Email <i class="bi bi-arrow-down-up text-muted"></i>
+                                  </th>
+                                  <th scope="col" class="sortable">
+                                    Mobile Number <i class="bi bi-arrow-down-up text-muted"></i>
+                                  </th>
+                                  <th scope="col" class="sortable">
+                                    Country Code <i class="bi bi-arrow-down-up text-muted"></i>
+                                  </th>
+                                  <th scope="col" class="sortable">
+                                    Type <i class="bi bi-arrow-down-up text-muted"></i>
+                                  </th>
+                                  <th scope="col" class="sortable">
+                                    Deferred <i class="bi bi-arrow-down-up text-muted"></i>
+                                  </th>
+                                  <th scope="col" class="sortable">
+                                    Bounced <i class="bi bi-arrow-down-up text-muted"></i>
+                                  </th>
+                                  <th scope="col" class="sortable">
+                                    Bounced Count <i class="bi bi-arrow-down-up text-muted"></i>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <input class="form-check-input" type="checkbox" id="recipient1">
+                                  </td>
+                                  <td>32365</td>
+                                  <td>Peter</td>
+                                  <td>Brighton</td>
+                                  <td>peterbrighton@gmail.com</td>
+                                  <td>1234567890</td>
+                                  <td>+1</td>
+                                  <td>Guest</td>
+                                  <td class="text-muted">NA</td>
+                                  <td class="text-muted">NA</td>
+                                  <td class="text-muted">NA</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <input class="form-check-input" type="checkbox" id="recipient2">
+                                  </td>
+                                  <td>125789</td>
+                                  <td>Mark</td>
+                                  <td>Sudworth</td>
+                                  <td>marksu@gmail.com</td>
+                                  <td>1234567890</td>
+                                  <td>+1</td>
+                                  <td>Travel Agent</td>
+                                  <td class="text-muted">NA</td>
+                                  <td class="text-muted">NA</td>
+                                  <td class="text-muted">NA</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
