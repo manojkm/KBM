@@ -2,3 +2,49 @@
 // Main Content Area
 // ============================================================================
 // Styles for the main email viewer area
+
+.main-wrapper {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; // Allows flex child to shrink below content size
+
+  .container-fluid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+
+    .row {
+      flex: 1;
+      min-height: 0;
+    }
+  }
+}
+
+.email-main-content {
+  background-color: $white;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  .main-content-wrapper {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0; // Allows flex child to shrink below content size
+  }
+}
+
+// Responsive adjustments
+@include media-breakpoint-down(lg) {
+  .email-sidebar {
+    max-height: 50vh;
+  }
+
+  .email-main-content {
+    min-height: 50vh;
+  }
+}

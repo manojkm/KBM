@@ -3,3 +3,28 @@
 // ============================================================================
 // Styles for the email inbox sidebar
 
+.email-sidebar {
+  border-right: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  .sidebar-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0; // Allows flex child to shrink below content size
+  }
+}
+
+// Responsive adjustments
+@include media-breakpoint-down(lg) {
+  .email-sidebar {
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+    height: auto;
+    max-height: 50vh;
+  }
+}

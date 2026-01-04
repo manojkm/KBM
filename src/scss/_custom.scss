@@ -3,3 +3,15 @@
 // ============================================================================
 // Global custom styles that don't fit into other categories
 // Add quick fixes, overrides, or general styles here
+
+// Full height layout
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
