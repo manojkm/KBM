@@ -1,0 +1,88 @@
+// ============================================================================
+// KBM Resorts - Main Stylesheet
+// ============================================================================
+// Advanced Bootstrap Sass Customization Pattern
+// ============================================================================
+// This follows Bootstrap's recommended method for overriding Sass variables
+// Reference: https://getbootstrap.com/docs/5.3/customize/sass/
+// ============================================================================
+
+// Step 1: Import Bootstrap functions (REQUIRED FIRST)
+// Functions are needed for color manipulation, map operations, etc.
+@import "bootstrap/scss/functions";
+
+// Step 2: Override Bootstrap variables BEFORE importing them
+// This is where you customize Bootstrap's default values.
+// Variables must come AFTER functions, but BEFORE variables import.
+// All Bootstrap variables use !default, so your overrides will take precedence.
+@import "variables-override";
+
+// Step 3: Import Bootstrap's default variables
+// These will use your overrides from step 2
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// Step 4: Customize Sass maps (optional but recommended for advanced customization)
+// If you need to merge custom values into Bootstrap's maps (like theme-colors),
+// do it here AFTER importing variables but BEFORE importing maps.
+// Example:
+// $theme-colors: map-merge($theme-colors, (
+//   "kbm-primary": #your-color,
+//   "kbm-secondary": #another-color
+// ));
+
+// Step 5: Import Bootstrap's maps (REQUIRED for Bootstrap 5.2+)
+// Maps are separated from variables in Bootstrap 5.2+
+@import "bootstrap/scss/maps";
+
+// Step 6: Import Bootstrap mixins (REQUIRED)
+// Mixins are needed for component generation
+@import "bootstrap/scss/mixins";
+
+// Step 7: Import the rest of Bootstrap
+// Since we've already imported functions, variables, maps, and mixins above,
+// Sass will use those (with our overrides) and import all components.
+// Sass only imports each file once, so this is safe.
+@import "bootstrap/scss/bootstrap";
+
+// Alternative: If you want to import components selectively to reduce bundle size,
+// comment out the line above and uncomment individual component imports:
+// @import "bootstrap/scss/root";
+// @import "bootstrap/scss/reboot";
+// @import "bootstrap/scss/type";
+// @import "bootstrap/scss/images";
+// @import "bootstrap/scss/containers";
+// @import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+// @import "bootstrap/scss/buttons";
+// @import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar";
+// @import "bootstrap/scss/card";
+// @import "bootstrap/scss/modal";
+// @import "bootstrap/scss/tooltip";
+// ... (add other components as needed)
+// @import "bootstrap/scss/utilities/api";
+
+// ============================================================================
+// Custom KBM Resorts Styles
+// ============================================================================
+
+// Step 8: Import custom base files (mixins, helpers)
+// Import these early so they're available to other files
+@import "base/mixins";
+@import "base/helpers";
+
+// Step 9: Import layout styles
+@import "layout/header";
+@import "layout/sidebar";
+@import "layout/main-content";
+
+// Step 10: Import component styles
+@import "components/email-list";
+@import "components/email-viewer";
+@import "components/email-compose";
+
+// Step 11: Import global custom styles (last, so it can override everything)
+@import "custom";

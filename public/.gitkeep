@@ -1,0 +1,4 @@
+# Public directory
+# Static assets served as-is (favicon, robots.txt, etc.)
+# Files here are served from the root URL (/)
+
