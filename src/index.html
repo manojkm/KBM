@@ -5,15 +5,175 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>KBM Resorts - Email Inbox</title>
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script type="module" src="./js/main.js"></script>
 </head>
 
 <body>
-  <div class="container-fluid py-4 px-3 mx-auto">
-    <!-- Logo image - src will be set by JavaScript -->
-    <img id="kbm-logo" alt="KBM Resorts Logo" />
-    <h1>Hello World</h1>
+  <!-- Header/Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <div class="container-fluid">
+      <!-- Left Side: Logo + Navigation -->
+      <a class="navbar-brand" href="#">
+        <img id="kbm-logo" alt="KBM Resorts Logo" />
+      </a>
+
+      <!-- Desktop Navigation (visible on lg and up) -->
+      <div class="d-none d-lg-flex flex-grow-1 align-items-center">
+        <ul class="navbar-nav me-auto small">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ops</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Properties</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Guest</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">BizDev</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Owners</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">HR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Admin</a>
+          </li>
+        </ul>
+
+        <!-- Right Side: User Icon -->
+        <div class="navbar-nav">
+          <div class="nav-item">
+            <i class="bi bi-person-circle fs-3 text-primary"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Offcanvas Drawer for Mobile (hidden on desktop using Bootstrap utility) -->
+  <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNavbar"
+    aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- Navigation Menu -->
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ops</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Properties</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Guest</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">BizDev</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Owners</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">HR</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Admin</a>
+        </li>
+      </ul>
+
+      <!-- Right Side: User Icon (in offcanvas) -->
+      <div class="navbar-nav mt-3">
+        <div class="nav-item">
+          <i class="bi bi-person-circle fs-3"></i>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <!-- Email Inbox Toolbar -->
+  <div class="inbox-toolbar bg-light border-bottom py-2">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+        <!-- Left Side: Mailbox Buttons with Badges -->
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <!-- Inbox Button (Active) -->
+          <button type="button" class="btn btn-primary p-1 rounded-1" data-bs-toggle="tooltip"
+            data-bs-placement="bottom" data-bs-custom-class="small-tooltip" title="Inbox">
+            <i class="bi bi-inbox mx-1"></i>
+            <span class="d-none">Inbox</span>
+            <span class="badge p-1 rounded-1 small">24</span>
+          </button>
+
+          <!-- Sentbox Button -->
+          <button type="button" class="btn btn-outline-primary border-primary-subtle p-1 rounded-1"
+            data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="small-tooltip" title="Sentbox">
+            <i class="bi bi-send mx-1"></i>
+            <span class="d-none">Sentbox</span>
+            <span class="badge p-1 rounded-1 small">18</span>
+          </button>
+
+          <!-- Draft Button -->
+          <button type="button" class="btn btn-outline-primary border-primary-subtle p-1 rounded-1"
+            data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="small-tooltip" title="Draft">
+            <i class="bi bi-file-earmark-text mx-1"></i>
+            <span class="d-none">Draft</span>
+            <span class="badge p-1 rounded-1 small">5</span>
+          </button>
+
+          <!-- Outbox Button -->
+          <button type="button" class="btn btn-outline-primary border-primary-subtle p-1 rounded-1"
+            data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="small-tooltip" title="Outbox">
+            <i class="bi bi-box-arrow-up mx-1"></i>
+            <span class="d-none">Outbox</span>
+            <span class="badge p-1 rounded-1 small">3</span>
+          </button>
+
+          <!-- Archived Button -->
+          <button type="button" class="btn btn-outline-primary border-primary-subtle p-1 rounded-1"
+            data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="small-tooltip" title="Archived">
+            <i class="bi bi-archive mx-1"></i>
+            <span class="d-none">Archived</span>
+            <span class="badge p-1 rounded-1 small">127</span>
+          </button>
+        </div>
+
+        <!-- Right Side: Action Buttons -->
+        <div class="d-flex align-items-center gap-2">
+          <!-- Compose Button -->
+          <button type="button" class="btn btn-primary">
+            <i class="bi bi-plus-lg me-1"></i>
+            Compose
+          </button>
+
+          <!-- Refresh Button -->
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="bottom"
+            data-bs-custom-class="small-tooltip" title="Refresh">
+            <i class="bi bi-arrow-clockwise"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <main>
+    <!-- Content will go here -->
+  </main>
 </body>
 
 </html>

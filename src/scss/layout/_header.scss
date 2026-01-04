@@ -2,3 +2,30 @@
 // Header Layout
 // ============================================================================
 // Styles for the top header/navigation bar
+
+.navbar {
+    // padding: 0.75rem 1rem;
+
+    .navbar-brand {
+        img {
+            height: auto;
+            width: 100%;
+            max-width: 200px;
+            object-fit: contain;
+        }
+    }
+
+    // .navbar-nav {
+    //     .nav-link {
+    //         padding: 0.5rem 1rem;
+    //     }
+    // }
+}
+
+// Hide backdrop on desktop (backdrop is dynamically created by Bootstrap,
+// so we can't use utility classes on it)
+@media (min-width: 992px) {
+    .offcanvas-backdrop {
+        display: none !important;
+    }
+}
