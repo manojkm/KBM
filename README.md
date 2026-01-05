@@ -68,6 +68,26 @@ KBM/
 └── vite.config.js       # Vite configuration
 ```
 
+## Deployment
+
+### Deploy to Vercel
+
+This project is configured for Vercel deployment:
+
+1. **Install Vercel CLI** (optional):
+```bash
+npm i -g vercel
+```
+
+2. **Deploy**:
+```bash
+vercel
+```
+
+Or connect your GitHub repository to Vercel for automatic deployments.
+
+**Note**: The project includes `vercel.json` for proper SPA routing configuration.
+
 ## Development
 
 ### Available Scripts
