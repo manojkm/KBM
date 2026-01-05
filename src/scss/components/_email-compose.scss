@@ -2,3 +2,58 @@
 // Email Compose Component
 // ============================================================================
 // Styles for composing and replying to emails
+
+// Email Reply Section
+.email-reply-section {
+  .email-reply-wrapper {
+    .email-reply-textarea {
+
+      resize: vertical;
+      min-height: 120px;
+
+      &:focus {
+        border-color: var(--bs-primary);
+        box-shadow: 0 0 0 0.2rem rgba(6, 70, 91, 0.25); // Primary color with opacity
+      }
+
+      &::placeholder {
+        color: var(--bs-secondary-color);
+        opacity: 0.7;
+      }
+    }
+
+    .email-reply-action {
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+
+      i {
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover {
+        color: var(--bs-primary) !important;
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    // .email-reply-send {
+    //   padding: 0.5rem 1.5rem;
+    //   font-weight: 500;
+    //   transition: all 0.2s ease-in-out;
+
+    //   &:hover {
+    //     transform: translateY(-1px);
+    //     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    //   }
+
+    //   &:active {
+    //     transform: translateY(0);
+    //     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    //   }
+    // }
+  }
+}

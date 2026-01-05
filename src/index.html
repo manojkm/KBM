@@ -189,13 +189,48 @@
                       <i class="bi bi-funnel me-1"></i>
                       Filter
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="filterDropdown">
-                      <li><a class="dropdown-item" href="#">All</a></li>
-                      <li><a class="dropdown-item" href="#">Unread</a></li>
-                      <li><a class="dropdown-item" href="#">Read</a></li>
-                      <li><a class="dropdown-item" href="#">Starred</a></li>
-                      <li><a class="dropdown-item" href="#">Important</a></li>
-                    </ul>
+                    <div class="dropdown-menu p-3" aria-labelledby="filterDropdown" style="min-width: 250px;">
+                      <!-- Msg Context Select -->
+                      <div class="mb-3">
+                        <label for="msgContextSelect" class="form-label small fw-medium mb-1">Msg Context</label>
+                        <select class="form-select form-select-sm" id="msgContextSelect">
+                          <option value="">Select Context</option>
+                          <option value="reservation">Reservation</option>
+                          <option value="inquiry">Inquiry</option>
+                          <option value="support">Support</option>
+                          <option value="billing">Billing</option>
+                        </select>
+                      </div>
+
+                      <!-- Msg Sub Context Select -->
+                      <div class="mb-3">
+                        <label for="msgSubContextSelect" class="form-label small fw-medium mb-1">Msg Sub Context</label>
+                        <select class="form-select form-select-sm" id="msgSubContextSelect">
+                          <option value="">Select Sub Context</option>
+                          <option value="check-in">Check-in</option>
+                          <option value="check-out">Check-out</option>
+                          <option value="modification">Modification</option>
+                          <option value="cancellation">Cancellation</option>
+                        </select>
+                      </div>
+
+                      <!-- Msg Role Select -->
+                      <div class="mb-3">
+                        <label for="msgRoleSelect" class="form-label small fw-medium mb-1">Msg Role</label>
+                        <select class="form-select form-select-sm" id="msgRoleSelect">
+                          <option value="">Select Role</option>
+                          <option value="guest">Guest</option>
+                          <option value="agent">Agent</option>
+                          <option value="manager">Manager</option>
+                          <option value="admin">Admin</option>
+                        </select>
+                      </div>
+
+                      <!-- Action Buttons -->
+                      <div class="d-flex gap-2 mt-3 pt-2 border-top">
+                        <button type="button" class="btn btn-primary flex-grow-1">Apply</button>
+                      </div>
+                    </div>
                   </div>
 
                   <!-- Clear Filter Button -->
@@ -284,7 +319,7 @@
                             <div class="email-meta text-primary fw-bold">
                               <span class="email-reference">VRBO_API RES_GENERAL443</span>
                               <span class="email-dates">2026-02-03 2026-02-10</span>
-                              <span class="email-guest-name">Carter, Alexandra</span>
+                              <span class="email-guest-name">Friedley, Tara</span>
                             </div>
                             <button type="button" class="btn btn-link p-0 email-star starred" data-bs-toggle="tooltip"
                               data-bs-placement="left" data-bs-custom-class="small-tooltip" title="Bookmark">
@@ -293,7 +328,8 @@
                           </div>
 
                           <div class="email-addresses mt-2 mb-2">
-                            <div class="text-primary x-small"><span class="text-muted">from:</span>denrique@gmail.com
+                            <div class="text-primary x-small"><span
+                                class="text-muted">from:</span>peter.friedley@gmail.com
                             </div>
                             <div class="text-primary x-small"><span
                                 class="text-muted">to:</span>reservations@kbmresorts.com
@@ -448,9 +484,9 @@
                         <li class="list-group-item email-list-item">
                           <div class="email-header">
                             <div class="email-meta text-primary fw-bold">
-                              <span class="email-reference">AIRBNB_API RES_AB123456</span>
+                              <span class="email-reference">VRBO_API RES_GENERAL443</span>
                               <span class="email-dates">2026-01-25 2026-01-30</span>
-                              <span class="email-guest-name">Smith, John</span>
+                              <span class="email-guest-name">Nomura, Alexandra</span>
                             </div>
                             <button type="button" class="btn btn-link p-0 email-star" data-bs-toggle="tooltip"
                               data-bs-placement="left" data-bs-custom-class="small-tooltip" title="Bookmark">
@@ -480,9 +516,9 @@
                         <li class="list-group-item email-list-item">
                           <div class="email-header">
                             <div class="email-meta text-primary fw-bold">
-                              <span class="email-reference">BOOKING_API RES_BK789012</span>
+                              <span class="email-reference">VRBO_API RES_GENERAL443</span>
                               <span class="email-dates">2026-01-20 2026-01-27</span>
-                              <span class="email-guest-name">Williams, Sarah</span>
+                              <span class="email-guest-name">Nomura, Alexandra</span>
                             </div>
                             <button type="button" class="btn btn-link p-0 email-star starred" data-bs-toggle="tooltip"
                               data-bs-placement="left" data-bs-custom-class="small-tooltip" title="Bookmark">
@@ -512,9 +548,9 @@
                         <li class="list-group-item email-list-item">
                           <div class="email-header">
                             <div class="email-meta text-primary fw-bold">
-                              <span class="email-reference">EXPEDIA_API RES_EX345678</span>
+                              <span class="email-reference">VRBO_API RES_GENERAL443</span>
                               <span class="email-dates">2026-01-15 2026-01-22</span>
-                              <span class="email-guest-name">Johnson, Michael</span>
+                              <span class="email-guest-name">Nomuara, Alexandra</span>
                             </div>
                             <button type="button" class="btn btn-link p-0 email-star" data-bs-toggle="tooltip"
                               data-bs-placement="left" data-bs-custom-class="small-tooltip" title="Bookmark">
@@ -580,7 +616,7 @@
                               2025-12-30 Friedley, Tara</h5>
                             <!-- From -->
                             <div class="email-from text-primary small">
-                              <span class="fw-medium text-end text-muted">from:</span> peterbrighton@gmail.com
+                              <span class="fw-medium text-end text-muted">from:</span> peter.friedley@gmail.com
                             </div>
                             <!-- To -->
                             <div class="email-to text-primary small">
@@ -632,7 +668,7 @@
                               <i class="bi bi-three-dots"></i>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="emailMoreOptions">
-                              <li><a class="dropdown-item" href="#">Forward</a></li>
+                              <li><a class="dropdown-item" href="#">Tap Chart</a></li>
                               <li><a class="dropdown-item" href="#">Mark as unread</a></li>
                               <li><a class="dropdown-item" href="#">Archive</a></li>
                               <li>
@@ -777,15 +813,52 @@
                             <i class="bi bi-funnel me-1"></i>
                             <span class="d-none d-sm-inline">Filter</span>
                           </button>
-                          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="emailViewerFilterDropdown">
-                            <li><a class="dropdown-item" href="#">All Tags</a></li>
-                            <li><a class="dropdown-item" href="#">Important</a></li>
-                            <li><a class="dropdown-item" href="#">Follow-up</a></li>
-                            <li>
-                              <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Custom Filter</a></li>
-                          </ul>
+                          <div class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="emailViewerFilterDropdown"
+                            style="min-width: 250px;">
+                            <!-- Msg Context Select -->
+                            <div class="mb-3">
+                              <label for="emailViewerMsgContextSelect" class="form-label small fw-medium mb-1">Msg
+                                Context</label>
+                              <select class="form-select form-select-sm" id="emailViewerMsgContextSelect">
+                                <option value="">Select Context</option>
+                                <option value="reservation">Reservation</option>
+                                <option value="inquiry">Inquiry</option>
+                                <option value="support">Support</option>
+                                <option value="billing">Billing</option>
+                              </select>
+                            </div>
+
+                            <!-- Msg Sub Context Select -->
+                            <div class="mb-3">
+                              <label for="emailViewerMsgSubContextSelect" class="form-label small fw-medium mb-1">Msg
+                                Sub Context</label>
+                              <select class="form-select form-select-sm" id="emailViewerMsgSubContextSelect">
+                                <option value="">Select Sub Context</option>
+                                <option value="check-in">Check-in</option>
+                                <option value="check-out">Check-out</option>
+                                <option value="modification">Modification</option>
+                                <option value="cancellation">Cancellation</option>
+                              </select>
+                            </div>
+
+                            <!-- Msg Role Select -->
+                            <div class="mb-3">
+                              <label for="emailViewerMsgRoleSelect" class="form-label small fw-medium mb-1">Msg
+                                Role</label>
+                              <select class="form-select form-select-sm" id="emailViewerMsgRoleSelect">
+                                <option value="">Select Role</option>
+                                <option value="guest">Guest</option>
+                                <option value="agent">Agent</option>
+                                <option value="manager">Manager</option>
+                                <option value="admin">Admin</option>
+                              </select>
+                            </div>
+
+                            <!-- Action Button -->
+                            <div class="d-flex gap-2 mt-3 pt-2 border-top">
+                              <button type="button" class="btn btn-primary flex-grow-1">Apply</button>
+                            </div>
+                          </div>
                         </div>
                       </div>
 
@@ -983,8 +1056,8 @@
                                   </td>
                                   <td>32365</td>
                                   <td>Peter</td>
-                                  <td>Brighton</td>
-                                  <td>peterbrighton@gmail.com</td>
+                                  <td>Friedley</td>
+                                  <td>peter.friedley@gmail.com</td>
                                   <td>1234567890</td>
                                   <td>+1</td>
                                   <td>Guest</td>
@@ -1009,6 +1082,54 @@
                                 </tr>
                               </tbody>
                             </table>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Email Reply Section -->
+                      <div class="email-reply-section mt-5 p-3 bg-light border">
+                        <div class="email-reply-wrapper">
+                          <!-- Textarea -->
+                          <textarea class="form-control email-reply-textarea mb-3 p-3 shadow-sm border-dark-subtle"
+                            rows="4" placeholder="Enter your reply"></textarea>
+
+                          <!-- Action Buttons & Send Button -->
+                          <div class="d-flex justify-content-between align-items-center">
+                            <!-- Left Side: Action Icons -->
+                            <div class="d-flex align-items-center gap-2">
+                              <!-- Attachment Button -->
+                              <button type="button" class="btn btn-link p-1 text-muted email-reply-action"
+                                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="small-tooltip"
+                                title="Attach file">
+                                <i class="bi bi-paperclip fs-5"></i>
+                              </button>
+
+                              <!-- Link Button -->
+                              <button type="button" class="btn btn-link p-1 text-muted email-reply-action"
+                                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="small-tooltip"
+                                title="Insert link">
+                                <i class="bi bi-link-45deg fs-5"></i>
+                              </button>
+
+                              <!-- Emoji Button -->
+                              <button type="button" class="btn btn-link p-1 text-muted email-reply-action"
+                                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="small-tooltip"
+                                title="Insert emoji">
+                                <i class="bi bi-emoji-smile fs-5"></i>
+                              </button>
+
+                              <!-- Image Button -->
+                              <button type="button" class="btn btn-link p-1 text-muted email-reply-action"
+                                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="small-tooltip"
+                                title="Upload image">
+                                <i class="bi bi-image fs-5"></i>
+                              </button>
+                            </div>
+
+                            <!-- Right Side: Send Button -->
+                            <button type="button" class="btn btn-primary px-3 email-reply-send">
+                              Send
+                            </button>
                           </div>
                         </div>
                       </div>

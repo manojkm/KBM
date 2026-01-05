@@ -41,6 +41,27 @@
     }
   }
 
+  // Filter dropdown menu with selects
+  .dropdown-menu {
+    &.p-3 {
+      .form-label {
+        color: var(--bs-body-color);
+        margin-bottom: 0.25rem;
+      }
+
+      .form-select {
+        font-size: 0.875rem;
+        border-color: var(--bs-border-color);
+
+        &:focus {
+          border-color: var(--bs-primary);
+          box-shadow: 0 0 0 0.2rem rgba(6, 70, 91, 0.25);
+        }
+      }
+
+    }
+  }
+
   // Clear filter button (link style)
   .btn-link {
     text-decoration: none;
